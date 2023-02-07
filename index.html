@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margarita Cocktails</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="cocktail__box"></div>
+    <script src="data.js"></script>
+    <script>
+        const cocktailBox = document.querySelector('.cocktail__box');
+        const dataCocktailDb = JSON.parse(data);
+        console.log(dataCocktailDb);
+
+        dataCocktailDb.forEach(element => {
+            const cocktail = document.createElement('div');
+            cocktail.classList.add('cocktail');
+
+            const drinkName = document.createElement('h2');
+            drinkName.classList.add('drink__name');
+            drinkName.textContent = element.strDrink;
+
+            const img = document.createElement('img');
+            img.classList.add('drink__img');
+            img.setAttribute('alt', 'Margarita');
+            img.src = element.strDrinkThumb;
+
+            const drinkDsc = document.createElement('div');
+            drinkDsc.classList.add('drink__dsc');
+
+            const drinkAlc = document.createElement('p');
+            drinkAlc.classList.add('drink__alc');
+            drinkAlc.textContent = element.strAlcoholic;
+
+            const drinkInstr = document.createElement('p');
+            drinkInstr.classList.add('drink__instr');
+            drinkInstr.textContent = element.strInstructions;
+
+            const drinkIngrBlock = document.createElement('div');
+            drinkIngrBlock.classList.add('drink__ingrblock');
+            drinkIngrBlock.textContent = 'Ingredients:';
+
+            const drinkIngr1 = document.createElement('p');
+            drinkIngr1.classList.add('drink__ingr');
+            drinkIngr1.textContent = element.strIngredient1;
+
+            const drinkIngr2 = document.createElement('p');
+            drinkIngr2.classList.add('drink__ingr');
+            drinkIngr2.textContent = element.strIngredient2;
+
+            const drinkIngr3 = document.createElement('p');
+            drinkIngr3.classList.add('drink__ingr');
+            drinkIngr3.textContent = element.strIngredient3;
+
+            const drinkIngr4 = document.createElement('p');
+            drinkIngr4.classList.add('drink__ingr');
+            drinkIngr4.textContent = element.strIngredient4;
+
+            const drinkIngr5 = document.createElement('p');
+            drinkIngr5.classList.add('drink__ingr');
+            drinkIngr5.textContent = element.strIngredient5;
+
+            const drinkIngr6 = document.createElement('p');
+            drinkIngr6.classList.add('drink__ingr');
+            drinkIngr6.textContent = element.strIngredient6;
+
+            const drinkIngr7 = document.createElement('p');
+            drinkIngr7.classList.add('drink__ingr');
+            drinkIngr7.textContent = element.strIngredient7;
+
+            cocktailBox.appendChild(cocktail);
+            cocktail.appendChild(drinkName);
+            cocktail.appendChild(img);
+            cocktail.appendChild(drinkDsc);
+            drinkDsc.appendChild(drinkAlc);
+            drinkDsc.appendChild(drinkInstr);
+            drinkDsc.appendChild(drinkIngrBlock);
+            drinkIngrBlock.appendChild(drinkIngr1);
+            drinkIngrBlock.appendChild(drinkIngr2);
+            drinkIngrBlock.appendChild(drinkIngr3);
+            drinkIngrBlock.appendChild(drinkIngr4);
+            drinkIngrBlock.appendChild(drinkIngr5);
+            drinkIngrBlock.appendChild(drinkIngr6);
+            drinkIngrBlock.appendChild(drinkIngr7);
+        });
+
+    </script>
+</body>
+
+</html>
